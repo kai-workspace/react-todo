@@ -3,9 +3,34 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+
+import React from 'react';
+
+const todoList = [
+  { id: 1, title: "Complete assignment 1" },
+  { id: 2, title: "Complete assignment 2" },
+  { id: 3, title: "Complete assignment 3" }
+]; // Empty array to store todo items
+
+
 function App() {
   const [count, setCount] = useState(0)
 
+  //return null; // or <></> for an empty fragment
+
+  return (
+    <>
+      <h1>Todo List</h1>
+      <ul>
+        
+        {todoList.map(todo => (
+            <li key={todo.id}>{todo.title}</li>
+          ))}
+      </ul>
+    </>
+  );
+
+  /* remove JSX from the "App" component in src/App.jsx file
   return (
     <>
       <div>
@@ -30,6 +55,9 @@ function App() {
       </p>
     </>
   )
+*/
+
 }
+
 
 export default App
